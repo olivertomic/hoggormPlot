@@ -9,7 +9,7 @@ Installation
 
 .. code-block:: bash
 
-    pip install hoggormplot
+	pip install hoggormplot
 
 
 Requirements
@@ -34,7 +34,7 @@ You can run this code by typing this on the commandline:
 
 .. code-block:: bash
 
-    python -m hoggormplot.TEST_pca
+	python -m hoggormplot.TEST_pca
 	python -m hoggormplot.TEST_pcr
 	python -m hoggormplot.TEST_pls1
 	python -m hoggormplot.TEST_pls2
