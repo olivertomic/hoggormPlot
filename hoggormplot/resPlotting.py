@@ -15,7 +15,7 @@ import itertools as it
 
 
 
-def plotPCA(model, pc=[1,2], plots=[1,2,3,4], objNames=[], varNames=[]):
+def plotResPCA(model, pc=[1,2], plots=[1,2,3,4], objNames=[], varNames=[]):
     """
     This functions generates plots that visualise the most important results
     from PCA
@@ -291,9 +291,9 @@ def plotPCA(model, pc=[1,2], plots=[1,2,3,4], objNames=[], varNames=[]):
             
             left = -0.2; right = len(pcNames) - 0.5; top = 105; bottom = -5
             xPos = range(len(pcNames))
-            ax.plot(xPos, cal, color='b', linestyle='solid', linewidth=1, \
+            ax.plot(xPos, cal, color='0.4', linestyle='solid', linewidth=1, \
                 label='calibrated explained variance')
-            ax.plot(xPos, val, color='r', linestyle='dashed', linewidth=1, \
+            ax.plot(xPos, val, color='0.4', linestyle='dashed', linewidth=1, \
                 label='validated explained variance')
             
             ax.set_xticks(xPos)
@@ -522,7 +522,7 @@ def plotPLSR_PCR(model, pc=[1,2], plots=[1,2,3,4],
             # Do the plotting and set the ticks on x-axis with corresponding name.
             ax.plot(xPos, XcalExplVar, color='b', linestyle='solid', \
                     linewidth=1, label='Calidated explained variance')
-            ax.plot(xPos, XvalExplVar, color='r', linestyle='dashed', \
+            ax.plot(xPos, XvalExplVar, color='r', linestyle='solid', \
                     linewidth=1, label='Validated explained variance')
             ax.set_xticks(xPos)
         
@@ -530,7 +530,7 @@ def plotPLSR_PCR(model, pc=[1,2], plots=[1,2,3,4],
             ax.set_ylabel('Explained variance [%]')
             ax.set_title('Explained variance in X')
             
-            plt.legend(loc='lower right', shadow=True, labelspacing=.1)
+            plt.legend(loc='best', shadow=False, labelspacing=.1)
             ltext = plt.gca().get_legend().get_texts()
             plt.setp(ltext[0], fontsize = 10, color = 'k')
             
@@ -552,7 +552,7 @@ def plotPLSR_PCR(model, pc=[1,2], plots=[1,2,3,4],
             # Do the plotting and set the ticks on x-axis with corresponding name.
             ax.plot(xPos, YcalExplVar, color='b', linestyle='solid', \
                     linewidth=1, label='Calidated explained variance')
-            ax.plot(xPos, YvalExplVar, color='r', linestyle='dashed', \
+            ax.plot(xPos, YvalExplVar, color='r', linestyle='solid', \
                     linewidth=1, label='Validated explained variance')
             ax.set_xticks(xPos)
         
@@ -560,7 +560,7 @@ def plotPLSR_PCR(model, pc=[1,2], plots=[1,2,3,4],
             ax.set_ylabel('Explained variance [%]')
             ax.set_title('Explained variance in Y')
             
-            plt.legend(loc='lower right', shadow=True, labelspacing=.1)
+            plt.legend(loc='best', shadow=False, labelspacing=.1)
             ltext = plt.gca().get_legend().get_texts()
             plt.setp(ltext[0], fontsize = 10, color = 'k')
             
@@ -621,9 +621,9 @@ def plotPLSR_PCR(model, pc=[1,2], plots=[1,2,3,4],
             yMinLine = yMin - extraY
             
             
-            ax.plot([0,0], [yMaxLine,yMinLine], color='0.4', linestyle='dashed', \
+            ax.plot([0,0], [yMaxLine, yMinLine], color='0.4', linestyle='dashed', \
                             linewidth=1)
-            ax.plot([xMinLine,xMaxLine], [0,0], color='0.4', linestyle='dashed', \
+            ax.plot([xMinLine, xMaxLine], [0,0], color='0.4', linestyle='dashed', \
                             linewidth=1)
             
             
@@ -634,8 +634,8 @@ def plotPLSR_PCR(model, pc=[1,2], plots=[1,2,3,4],
             yMaxLim = yMax + limY
             yMinLim = yMin - limY
             
-            ax.set_xlim(xMinLim,xMaxLim)
-            ax.set_ylim(yMinLim,yMaxLim)
+            ax.set_xlim(xMinLim, xMaxLim)
+            ax.set_ylim(yMinLim, yMaxLim)
             
             
             # Plot title, axis names. 
@@ -647,76 +647,83 @@ def plotPLSR_PCR(model, pc=[1,2], plots=[1,2,3,4],
             plt.show()
 
         
-        # Explained variances plot for each bariable in Y       
+        # Cumulative calibrated explained variances plot for each variable in Y       
         if item == 6:
             
-            YcalExplVar_indVar = model.Y_cumCalExplVar_indVar()
-    
-            fig = plt.figure()
-            ax = fig.add_subplot(111)
-            
-            # Construct positions for ticks along x-axis.
-            xPos = range(np.shape(YcalExplVar_indVar)[0])
-            
-            plot_colours = it.cycle(('b', 'r', 'k', 'g', 'm', 'b', 'r', 'k', 'g', 'm'))
-            plot_linestyles = it.cycle(('solid', 'solid', 'solid', 'solid', 'solid', \
-                    'dashed', 'dashed', 'dashed', 'dashed', 'dashed'))
-            
-            for varInd in range(np.shape(YcalExplVar_indVar)[1]):
-                ax.plot(xPos, YcalExplVar_indVar[:,varInd], \
-                        color=next(plot_colours), \
-                        linestyle=next(plot_linestyles), linewidth=1, \
-                        label=YvarNames[varInd]+' CAL')
-            
-            ax.set_xticks(xPos)
+            try:
+                YcalExplVar_indVar = model.Y_cumCalExplVar_indVar()
         
-            ax.set_ylabel('Explained variance [%]')
-            ax.set_title('CALIBRATED Explained variance of individual variables in Y')
+                fig = plt.figure()
+                ax = fig.add_subplot(111)
+                
+                # Construct positions for ticks along x-axis.
+                xPos = range(np.shape(YcalExplVar_indVar)[0])
+                
+                plot_colours = it.cycle(('b', 'r', 'k', 'g', 'm', 'b', 'r', 'k', 'g', 'm'))
+                plot_linestyles = it.cycle(('solid', 'solid', 'solid', 'solid', 'solid', \
+                        'dashed', 'dashed', 'dashed', 'dashed', 'dashed'))
+                
+                for varInd in range(np.shape(YcalExplVar_indVar)[1]):
+                    ax.plot(xPos, YcalExplVar_indVar[:,varInd], \
+                            color=next(plot_colours), \
+                            linestyle=next(plot_linestyles), linewidth=1, \
+                            label=YvarNames[varInd]+' CAL')
+                
+                ax.set_xticks(xPos)
             
-            plt.legend(loc='lower right', shadow=True, labelspacing=.1)
-            ltext = plt.gca().get_legend().get_texts()
-            plt.setp(ltext[0], fontsize = 10, color = 'k')
+                ax.set_ylabel('Explained variance [%]')
+                ax.set_title('CALIBRATED Explained variance of individual variables in Y')
+                
+                plt.legend(loc='best', shadow=False, labelspacing=.1)
+                ltext = plt.gca().get_legend().get_texts()
+                plt.setp(ltext[0], fontsize = 10, color = 'k')
+                
+                plt.show()
             
-            plt.show()
-        
+            except AttributeError:
+                print('Cumulative calbrated explained variances plot for individual variables in Y not available for PLSR1 model.')
         
         # Cumulative validated explained variances plot for each variable in Y       
         if item == 7:
             
-            YcalExplVar_indVar = model.Y_cumValExplVar_indVar()
-    
-            fig = plt.figure()
-            ax = fig.add_subplot(111)
-            
-            # Construct positions for ticks along x-axis.
-            xPos = range(np.shape(YcalExplVar_indVar)[0])
-            
-            plot_colours = it.cycle(('b', 'r', 'k', 'g', 'm', 'b', 'r', 'k', 'g', 'm'))
-            plot_linestyles = it.cycle(('solid', 'solid', 'solid', 'solid', 'solid', \
-                    'dashed', 'dashed', 'dashed', 'dashed', 'dashed'))
-            
-        #    print 'len xpos', len(xPos)
-        #    print 'len Yvar', len()
-            for varInd in range(np.shape(YcalExplVar_indVar)[1]):
-                ax.plot(xPos, YcalExplVar_indVar[:,varInd], \
-                        color=next(plot_colours), \
-                        linestyle=next(plot_linestyles), linewidth=1, \
-                        label=YvarNames[varInd]+' VAL')
-            
-            ax.set_xticks(xPos)
+            try:
+                YcalExplVar_indVar = model.Y_cumValExplVar_indVar()
         
-            ax.set_ylabel('Explained variance [%]')
-            ax.set_title('VALIDATED Explained variance of individual variables in Y')
+                fig = plt.figure()
+                ax = fig.add_subplot(111)
+                
+                # Construct positions for ticks along x-axis.
+                xPos = range(np.shape(YcalExplVar_indVar)[0])
+                
+                plot_colours = it.cycle(('b', 'r', 'k', 'g', 'm', 'b', 'r', 'k', 'g', 'm'))
+                plot_linestyles = it.cycle(('solid', 'solid', 'solid', 'solid', 'solid', \
+                        'dashed', 'dashed', 'dashed', 'dashed', 'dashed'))
+                
+            #    print 'len xpos', len(xPos)
+            #    print 'len Yvar', len()
+                for varInd in range(np.shape(YcalExplVar_indVar)[1]):
+                    ax.plot(xPos, YcalExplVar_indVar[:,varInd], \
+                            color=next(plot_colours), \
+                            linestyle=next(plot_linestyles), linewidth=1, \
+                            label=YvarNames[varInd]+' VAL')
+                
+                ax.set_xticks(xPos)
             
-            plt.legend(loc='lower right', shadow=True, labelspacing=.1)
-            ltext = plt.gca().get_legend().get_texts()
-            plt.setp(ltext[0], fontsize = 10, color = 'k')
+                ax.set_ylabel('Explained variance [%]')
+                ax.set_title('VALIDATED Explained variance of individual variables in Y')
+                
+                plt.legend(loc='best', shadow=False, labelspacing=.1)
+                ltext = plt.gca().get_legend().get_texts()
+                plt.setp(ltext[0], fontsize = 10, color = 'k')
+                
+                plt.show()
             
-            plt.show() 
+            except AttributeError:
+                print('Cumulative validated explained variances plot for individual variables in Y not available for PLSR1 model.')
         
         
                 
-        # Cumulative validated explained variances for each variable in Y       
+        # X loadings plot as line plots       
         if item == 8:
             
             Xloadings = model.X_loadings()
@@ -728,11 +735,16 @@ def plotPLSR_PCR(model, pc=[1,2], plots=[1,2,3,4],
                     linewidth=1, label='PC{0}'.format(str(pc[0])))
             ax.plot(Xloadings[:, pc[1]], color='r', 
                     linewidth=1, label='PC{0}'.format(str(pc[1])))
-            #ax.plot(Xloadings[:, 2], color='g', linewidth=1, label='PC3')
+                    
+            xMaxLine = np.shape(Xloadings)[0] * 1.05
+            ax.plot([0, xMaxLine], [0, 0], color='0.4', linestyle='dashed', \
+                            linewidth=1)
+            
         
             ax.set_title('X loadings')
+            ax.set_xlim(0, xMaxLine)
             
-            plt.legend(loc='best', shadow=True, labelspacing=.1)
+            plt.legend(loc='best', shadow=False, labelspacing=.1)
             ltext = plt.gca().get_legend().get_texts()
             plt.setp(ltext[0], fontsize = 10, color = 'k')
             
