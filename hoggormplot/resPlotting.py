@@ -15,7 +15,7 @@ import itertools as it
 
 
 
-def plotResPCA(model, pc=[1,2], plots=[1,2,3,4], objNames=[], varNames=[]):
+def plotPCA(model, pc=[1,2], plots=[1,2,3,4], objNames=[], varNames=[]):
     """
     This functions generates plots that visualise the most important results
     from PCA
