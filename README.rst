@@ -1,5 +1,7 @@
-HoggormPlot
+hoggormplot
 ===========
+
+hoggormplot is a python package that contains simple plotting functions for visualisation of data analysis results from the hoggorm package. 
 
 Hoggorm is a Python package for explorative multivariate statistics in Python. It contains PCA (principal component analysis), PCR (principal component regression), PLSR (partial least squares regression) and the matrix corrlation coefficients RV and RV2.
 
@@ -17,13 +19,12 @@ Requirements
 
 - hoggorm
 - matplotlib
-- pandas
 
 
 Documentation
 -------------
 
-By now the example code is in these files in the hoggormPlot package:
+hoggormplot contains the following scripts for showcasing the use of the plotting functions for each of the implemented analysis methods:
 
 - TEST_pca.py
 - TEST_pcr.py
