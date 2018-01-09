@@ -44,13 +44,13 @@ selection = 2
 if selection == 1:
     model01 = nipalsPCR(arrX=X1, arrY=Y, \
                         Ystand=False, Xstand=False, 
-                        numPC=3, cvType=["loo"])
+                        numComp=3, cvType=["loo"])
     
 # Select segmented cross validation
 if selection == 2:
     model01 = nipalsPCR(arrX=X1, arrY=Y, \
                             Ystand=False, Xstand=False, 
-                            cvType=["KFold", 25], numPC=4)
+                            numComp=4, cvType=["KFold", 25])
 
     
     
@@ -58,10 +58,10 @@ if selection == 2:
 # PLot results
 #==============================================================================
 
-rpl.plotPLSR_PCR(model01, pc=[1, 2], plots=[1, 2, 3, 4], 
-                 objNames=objNames, 
-                 XvarNames=X1_varNames, 
-                 YvarNames=Y_varNames)
+rpl.plot(model01, pc=[1, 2], plots=[1, 2, 3, 4], 
+         objNames=objNames, 
+         XvarNames=X1_varNames, 
+         YvarNames=Y_varNames)
 
 
 
@@ -74,10 +74,10 @@ index = 7
 Xnew = X1[index, :]
 Yreal = Y[index, :]
 
-Ypred = model01.Y_predict(Xnew, numPC=2)
+Ypred = model01.Y_predict(Xnew, numComp=2)
 
 print(Yreal)
 print(Ypred)
 
 
-projScores = model01.X_scores_predict(Xnew, numPC=2)
+projScores = model01.X_scores_predict(Xnew, numComp=2)
