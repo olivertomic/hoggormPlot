@@ -36,11 +36,11 @@ selection = 2
 
 # Select full cross validation
 if selection == 1:
-    res = nipalsPCA(arrX=OE, Xstand=False, cvType=["loo"], numPC=4)
+    res = nipalsPCA(arrX=OE, Xstand=False, cvType=["loo"], numComp=4)
 
 # Select segmented cross validation
 if selection == 2:
-    res = nipalsPCA(arrX=OE, Xstand=False, cvType=["KFold", 5], numPC=4)
+    res = nipalsPCA(arrX=OE, Xstand=False, cvType=["KFold", 5], numComp=4)
 
 
 
@@ -48,9 +48,9 @@ if selection == 2:
 # PLot results
 #==============================================================================
 
-rpl.plotPCA(res, pc=[1, 2], plots=[1, 2, 3, 4], 
-            objNames=OE_objNames, 
-            varNames=OE_varNames)
+rpl.plot(res, pc=[1, 2], plots=[1, 2, 3, 4], 
+         objNames=OE_objNames, 
+         varNames=OE_varNames)
 
 
 
@@ -66,4 +66,4 @@ lrInd = 10
 Xnew = OE[frInd:lrInd, :]
 
 # Compute projected scores
-projScores = res.X_scores_predict(Xnew, numPC=2)
+projScores = res.X_scores_predict(Xnew, numComp=2)
