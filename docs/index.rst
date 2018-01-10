@@ -13,6 +13,7 @@ Welcome to the HoggormPlot documentation
    :caption: Content
 
    quickstart
+   plottingFuncs
 
 
 
