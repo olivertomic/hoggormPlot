@@ -8,12 +8,19 @@ Welcome to the HoggormPlot documentation
 
 .. image:: Knotwork-Serpents-300px.png
 
+HoggormPlot is a complementary plotting package designed specifically for visualising results of
+multivariate statistical models computed with the `Hoggorm`_ package.
+
+.. _Hoggorm: http://hoggorm.readthedocs.io/en/latest/
+
 .. toctree::
    :maxdepth: 2
    :caption: Content
 
    quickstart
-   plottingFuncs
+   mainPlot
+   conveniencePlots
+   SMI
 
 
 
