@@ -4,6 +4,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import itertools as it
+import hoggorm
 
 
 
@@ -102,13 +103,13 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
     #############################
 
     # Check input class
-    if isinstance(model, pca.nipalsPCA):
+    if isinstance(model, hoggorm.pca.nipalsPCA):
         modeltype = 'PCA'
-    elif isinstance(model, pcr.nipalsPCR):
+    elif isinstance(model, hoggorm.pcr.nipalsPCR):
         modeltype = 'PCR'
-    elif isinstance(model, plsr1.nipalsPLS1):
+    elif isinstance(model, hoggorm.plsr1.nipalsPLS1):
         modeltype = 'PLS1'
-    elif isinstance(model, plsr2.nipalsPLS2):
+    elif isinstance(model, hoggorm.plsr2.nipalsPLS2):
         modeltype = 'PLS2'
 
     if isinstance(plots, int):
