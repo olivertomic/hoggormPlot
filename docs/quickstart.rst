@@ -13,6 +13,7 @@ Required Python packages
 
 - numpy
 - hoggorm >= 0.11.0
+- matplotlib >= 2.1.1
 
 
 Installation and updates
