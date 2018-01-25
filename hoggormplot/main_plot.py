@@ -136,8 +136,12 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 which[i] = 'Both'
             elif plots[i] == 6:
                 which[i] = 'Y'
-    elif len(which) == 1 & len(plots) > 1: # Repeat which if needed
+    elif (len(which) == 1) & (len(plots) > 1): # Repeat which if needed
         which = which*len(plots)
+
+    if modeltype == 'PCA':
+        for i in range(len(which)):
+            which[i] = 'X'
 
     if not isinstance(validated, bool):
         if len(validated) == 0:
