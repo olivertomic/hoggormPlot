@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import hoggorm
+from main_plot import plot
 
 
 def correlationLoadings(model, comp=[1,2], which=[],

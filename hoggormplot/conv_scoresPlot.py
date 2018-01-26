@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+import hoggorm
+from main_plot import plot
+
 
 def scores(model, comp=[1,2], which=[],
            objNames=[], newX=[], newY=[], newObjNames=[]):
