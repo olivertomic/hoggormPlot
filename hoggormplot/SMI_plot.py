@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import hoggorm
-from main_plot import plot
+from .main_plot import plot
 
 def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
             B=10000, fontscale=1):

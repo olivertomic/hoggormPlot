@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import hoggorm
-from main_plot import plot
+from .main_plot import plot
 
 
 def explainedVariance(model, which=[], cummulative=True, individual=False, 

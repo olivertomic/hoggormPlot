@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import hoggorm
-from main_plot import plot
+from .main_plot import plot
 
 
 def predict(model, comp=[1,2], 
