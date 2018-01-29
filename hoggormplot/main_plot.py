@@ -822,7 +822,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 yMax = max(Yhat[:, ys])
                 yMin = min(Yhat[:, ys])
                 
-                xyMin = max([xMin, yMin])
+                xyMin = min([xMin, yMin])
                 xyMax = max([xMax, yMax])
                 
                 # Set limits for lines representing the axes.
@@ -831,7 +831,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                     extraX = xyMax * .4
                     limX = xyMax * .3
                 
-                elif abs(xyMax) < abs(xMin):
+                elif abs(xyMax) < abs(xyMin):
                     extraX = abs(xyMin) * .4
                     limX = abs(xyMin) * .3
                 
