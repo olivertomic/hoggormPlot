@@ -644,8 +644,8 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 
                 if np.shape(RegCoefs)[1]>1:
                     plt.legend([YvarNames[ind]],loc='best', shadow=False, labelspacing=.1)
-                ltext = plt.gca().get_legend().get_texts()
-                plt.setp(ltext[0], fontsize = 10, color = 'k')
+                    ltext = plt.gca().get_legend().get_texts()
+                    plt.setp(ltext[0], fontsize = 10, color = 'k')
                 plt.show()
             
             
@@ -796,7 +796,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 Y = model.arrY_input
                 ny = np.shape(Y)[1]
             if newData == False:
-                Yhat = model.Y_predict(model.arrX, comp[0])
+                Yhat = model.Y_predict(model.arrX_input, comp[0])
                 theObjNames = objNames
             else:
                 Y = newY
