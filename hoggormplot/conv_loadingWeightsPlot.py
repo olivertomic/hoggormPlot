@@ -5,7 +5,7 @@ from .main_plot import plot
 
 
 def loadingWeights(model, comp=[1,2], which=[], line=False, 
-                 weights=True, XvarNames=[], YvarNames=[]):
+                 weights=True, XvarNames=[], YvarNames=[], figsize=None):
     """
     This is a convenience function that generates loading weights plots of 
     hoggorm models.
@@ -40,6 +40,7 @@ def loadingWeights(model, comp=[1,2], which=[], line=False,
     YvarNames : list, optional
         Names of variables in Y may be provided in this list.
     
+    figsize: a tuple (width, height) in inches
     
     RETURNS
     -------
@@ -56,6 +57,7 @@ def loadingWeights(model, comp=[1,2], which=[], line=False,
     >>> hopl.loadingWeights(myModel, line=True, weights=True)
     """
     plot(model=model, comp=comp, plots='loadings', which=which, line=line, 
-                 weights=weights, XvarNames=XvarNames, YvarNames=YvarNames)
+                 weights=weights, XvarNames=XvarNames, YvarNames=YvarNames,
+                 figsize=figsize)
 
 

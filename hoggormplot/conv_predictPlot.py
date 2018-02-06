@@ -5,7 +5,7 @@ from .main_plot import plot
 
 
 def predict(model, comp=[1,2], 
-                 objNames=[], newX=[], newY=[], newObjNames=[]):
+                 objNames=[], newX=[], newY=[], newObjNames=[], figsize=None):
     """
     This is a convenience function that generates plots of predicted vs. 
     original values of hoggorm models.
@@ -28,6 +28,7 @@ def predict(model, comp=[1,2],
     newObjNames : list, optional
         The list contains object names of new measurement data in X or Y.
     
+    figsize: a tuple (width, height) in inches
     
     RETURNS
     -------
@@ -43,5 +44,6 @@ def predict(model, comp=[1,2],
     >>> hopl.predict(myModel, comp=[3, 4])
     """
     plot(model, comp=comp, plots='predict', 
-                 objNames=objNames, newX=newX, newY=newY, newObjNames=newObjNames)
+                 objNames=objNames, newX=newX, newY=newY, newObjNames=newObjNames,
+                 figsize=figsize)
 

@@ -5,7 +5,7 @@ from .main_plot import plot
 
 
 def biplot(model, comp=[1,2], which=[], 
-                 objNames=[], XvarNames=[], YvarNames=[]):
+                 objNames=[], XvarNames=[], YvarNames=[], figsize=None):
     """
     This is a convenience plot function which generates a bi-plot of hoggorm 
     models.
@@ -35,6 +35,7 @@ def biplot(model, comp=[1,2], which=[],
     YvarNames : list, optional
         Names of variables in Y may be provided in this list.
     
+    figsize: a tuple (width, height) in inches
     
     RETURNS
     -------
@@ -50,6 +51,7 @@ def biplot(model, comp=[1,2], which=[],
     >>> hopl.biplot(myModel)
     """
     plot(model=model, comp=comp, plots='biplot', which=which,
-                 objNames=objNames, XvarNames=XvarNames, YvarNames=YvarNames)
+                 objNames=objNames, XvarNames=XvarNames, YvarNames=YvarNames,
+                 figsize=figsize)
 
 
