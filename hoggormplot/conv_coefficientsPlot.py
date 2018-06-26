@@ -4,7 +4,7 @@ import hoggorm
 from .main_plot import plot
 
 
-def coefficients(model, comp=[1]):
+def coefficients(model, comp=[1], figsize=None):
     """
     This is a convenience plot function which generates coefficients plots of 
     hoggorm models.
@@ -31,10 +31,10 @@ def coefficients(model, comp=[1]):
     >>> hopl.coefficients(myModel)
     >>> hopl.coefficients(myModel, comp=[2])
     """
-    plot(model=model, plots='coeffs', comp=comp)
+    plot(model=model, plots='coeffs', comp=comp, figsize=figsize)
 
 
-def coeffs(model, comp=[1]):
+def coeffs(model, comp=[1], figsize=None):
     """
     This is a convenience plot function which generates coefficients plots of 
     hoggorm models. Note that this convenience function is identical to 
@@ -61,6 +61,6 @@ def coeffs(model, comp=[1]):
     >>> hopl.coeffs(myModel)
     >>> hopl.coeffs(myModel, comp=[2])
     """
-    plot(model=model, plots='coeffs', comp=comp)
+    plot(model=model, plots='coeffs', comp=comp, figsize=figsize)
 
 

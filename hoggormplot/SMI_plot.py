@@ -4,7 +4,7 @@ import hoggorm
 from .main_plot import plot
 
 def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
-            B=10000, fontscale=1):
+            B=10000, fontscale=1, figsize=None):
     """
     Diamond plot for Similarity of matrices index (SMI)
     
@@ -30,6 +30,8 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
     
     fontscale : double, optional
         scaling parameter for significance symbols and component labels.
+    
+    figsize: a tuple (width, height) in inches
 
     EXAMPLES
     --------
@@ -57,7 +59,7 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
         Pval = smi.significance(B=B)
     
     # Main plot, equal axes
-    fig = plt.figure()
+    fig = plt.figure(figsize=figsize)
     ax  = fig.add_subplot(111, adjustable='box', aspect=1)
     # Loop over all combinations of components
     for i in range(pc[0]):
@@ -125,5 +127,6 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
     cb1  = mpl.colorbar.ColorbarBase(ax1, cmap=cmap,
                                     norm=norm,
                                     orientation='vertical')
-    cb1.set_label('SMI')    
+    cb1.set_label('SMI')  
     plt.show()
+    

@@ -5,7 +5,7 @@ from .main_plot import plot
 
 
 def explainedVariance(model, which=[], cummulative=True, individual=False, 
-                      validated=[]):
+                      validated=[], figsize=None):
     """
     This function generates explained variances plots of hoggorm models.
     
@@ -35,6 +35,7 @@ def explainedVariance(model, which=[], cummulative=True, individual=False,
        When set to ``'validated=[TRUE]'`` validated values are plotted if 
        applicable (scores => False, explainedVariance => True).
     
+    figsize: a tuple (width, height) in inches
     
     RETURNS
     -------
@@ -51,11 +52,12 @@ def explainedVariance(model, which=[], cummulative=True, individual=False,
     >>> hopl.explainedVariance(myModel, cumulative=True)
     """
     plot(model, plots='explainedVariance', which=which,
-                 cummulative=cummulative, individual=individual, validated=validated)
+                 cummulative=cummulative, individual=individual, validated=validated,
+                 figsize=figsize)
 
 
 def explVar(model, which=[],
-                 cummulative=True, individual=False, validated=[]):
+                 cummulative=True, individual=False, validated=[], figsize=None):
     """
     This function generates explained variances plots of hoggorm models.
     
@@ -85,6 +87,7 @@ def explVar(model, which=[],
        When set to ``'validated=[TRUE]'`` validated values are plotted if 
        applicable (scores => False, explainedVariance => True).
     
+    figsize: a tuple (width, height) in inches
     
     RETURNS
     -------
@@ -101,7 +104,8 @@ def explVar(model, which=[],
     >>> hopl.explVar(myModel, cumulative=True)
     """
     plot(model, plots='explainedVariance', which=which,
-                 cummulative=cummulative, individual=individual, validated=validated)
+                 cummulative=cummulative, individual=individual, validated=validated,
+                 figsize=figsize)
 
 
 

@@ -11,7 +11,7 @@ import hoggorm
 def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False, 
          weights=False, cummulative=True, individual=False, validated=[],
          objNames=[], XvarNames=[], YvarNames=[], newX=[], newY=[], 
-         newObjNames=[]):
+         newObjNames=[], figsize=None):
     """
     This is the main plot function that generates plots that visualise results 
     from PCA, PCR, PLSR and PLSR2 models computed with the Hoggorm package.
@@ -81,6 +81,8 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
     
     YvarNames : list, optional
         Names of variables in Y may be provided in this list.
+    
+    figsize: a tuple (width, height) in inches
     
     
     RETURNS
@@ -245,7 +247,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
             
             for xy in range(len(XorY)):
                 Scores = Score[xy]
-                fig = plt.figure()
+                fig = plt.figure(figsize=figsize)
                 ax = fig.add_subplot(111)
                 
                 
@@ -356,7 +358,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
             for xy in range(len(XorY)):
                 varNames = varName[xy]
                 Loadings = Loading[xy]
-                fig = plt.figure()
+                fig = plt.figure(figsize=figsize)
                 ax = fig.add_subplot(111)
                      
                 if line == False:
@@ -466,7 +468,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 YexplVar = model.Y_calExplVar()
                 YcorrLoadings = model.Y_corrLoadings()
             
-            fig = plt.figure()
+            fig = plt.figure(figsize=figsize)
             ax = fig.add_subplot(111)
             
             # Plot lines through origo    
@@ -579,7 +581,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
             rangY  = [-abs(np.min(Y, axis=0)), abs(np.max(Y, axis=0))]
             ratio  = np.max(np.vstack(rangY)/np.transpose(np.vstack([rangX1, rangX1])))
             
-            fig = plt.figure()
+            fig = plt.figure(figsize=figsize)
             ax = fig.add_subplot(111)
 
             # Loop through scores.
@@ -626,7 +628,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
         if item == 5:
             RegCoefs = model.regressionCoefficients(comp[0])
             for ind in range(np.shape(RegCoefs)[1]):
-                fig = plt.figure()
+                fig = plt.figure(figsize=figsize)
                 ax = fig.add_subplot(111)
                 if np.shape(RegCoefs)[1] > 1:
                     ax.plot(RegCoefs[:,ind], color='b', 
@@ -669,7 +671,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 if validated == False:
                     # Calibrated
                     try:
-                        fig = plt.figure()
+                        fig = plt.figure(figsize=figsize)
                         ax = fig.add_subplot(111)
                         
                         # Construct positions for ticks along x-axis.
@@ -714,7 +716,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                         if cummulative == False:
                             ValExplVar_indVar = np.hstack([np.reshape(ValExplVar_indVar[:,0],[-1,1]), np.diff(ValExplVar_indVar)])
                 
-                        fig = plt.figure()
+                        fig = plt.figure(figsize=figsize)
                         ax = fig.add_subplot(111)
                         
                         # Construct positions for ticks along x-axis.
@@ -760,7 +762,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                     CalExplVar = np.hstack([CalExplVar[0], np.diff(CalExplVar)])
                     ValExplVar = np.hstack([ValExplVar[0], np.diff(ValExplVar)])
                 
-                fig = plt.figure()
+                fig = plt.figure(figsize=figsize)
                 ax = fig.add_subplot(111)
                 
                 # Construct positions for ticks along x-axis.
@@ -804,7 +806,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 theObjNames = newObjNames
                 
             for ys in range(ny):
-                fig = plt.figure()
+                fig = plt.figure(figsize=figsize)
                 ax = fig.add_subplot(111)
     
                 # Loop through all coordinates (PC1,PC2) and names to plot scores.

@@ -5,7 +5,7 @@ from .main_plot import plot
 
 
 def scores(model, comp=[1,2], which=[],
-           objNames=[], newX=[], newY=[], newObjNames=[]):
+           objNames=[], newX=[], newY=[], newObjNames=[], figsize=None):
     """
     This is a convenience function that generates scores plots of hoggorm 
     models.
@@ -38,6 +38,7 @@ def scores(model, comp=[1,2], which=[],
     newObjNames : list, optional
         The list contains object names of new measurement data in X or Y.
     
+    figsize: a tuple (width, height) in inches
     
     RETURNS
     -------
@@ -53,7 +54,8 @@ def scores(model, comp=[1,2], which=[],
     >>> hopl.scores(myModel)
     """
     plot(model=model, comp=comp, plots='scores', which=which,
-                 objNames=objNames, newX=newX, newY=newY, newObjNames=newObjNames)
+                 objNames=objNames, newX=newX, newY=newY, newObjNames=newObjNames,
+                 figsize=figsize)
  
 
 

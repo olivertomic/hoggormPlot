@@ -1,1 +1,3 @@
 *.pyc
+.spyproject/
+*.egg-info

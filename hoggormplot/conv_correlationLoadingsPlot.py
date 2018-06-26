@@ -5,7 +5,7 @@ from .main_plot import plot
 
 
 def correlationLoadings(model, comp=[1,2], which=[],
-                 XvarNames=[], YvarNames=[]):
+                 XvarNames=[], YvarNames=[], figsize=None):
     """
     This is a convenience plot function which generates correlation loadings 
     plots of hoggorm models.
@@ -32,6 +32,7 @@ def correlationLoadings(model, comp=[1,2], which=[],
     YvarNames : list, optional
         Names of variables in Y may be provided in this list.
     
+    figsize: a tuple (width, height) in inches
     
     RETURNS
     -------
@@ -47,7 +48,7 @@ def correlationLoadings(model, comp=[1,2], which=[],
     >>> hopl.correlationLoadings(myModel)
     """
     plot(model=model, comp=comp, plots='correlationLoadings', which=which,
-                 XvarNames=XvarNames, YvarNames=YvarNames)
+                 XvarNames=XvarNames, YvarNames=YvarNames, figsize=figsize)
 
 
 
