@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Convenience plotting functions &mdash; hoggormplot 0.10.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SMI plotting function" href="SMI.html" />
+    <link rel="prev" title="Main plotting function" href="mainPlot.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> hoggormplot
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.10.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mainPlot.html">Main plotting function</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Convenience plotting functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#explained-variance-plot">Explained variance plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hoggormplot.conv_scoresPlot">Scores plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hoggormplot.conv_loadingsPlot">Loadings plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hoggormplot.conv_correlationLoadingsPlot">Correlation loadings plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hoggormplot.conv_biPlot">Biplot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coefficients-plot">Coefficients plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hoggormplot.conv_loadingWeightsPlot">Loading weights plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-hoggormplot.conv_predictPlot">Predict plot</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SMI.html">SMI plotting function</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">hoggormplot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Convenience plotting functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/conveniencePlots.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="convenience-plotting-functions">
+<h1>Convenience plotting functions<a class="headerlink" href="#convenience-plotting-functions" title="Permalink to this headline">¶</a></h1>
+<p>This is an overview of available <strong>convenience plotting functions</strong> in
+HoggormPlot. They are based on the main plot function
+<code class="docutils literal notranslate"><span class="pre">hoggorm.main_plot.plot</span></code> and provide simplified interfaces for interactive
+use.</p>
+<div class="section" id="explained-variance-plot">
+<h2>Explained variance plot<a class="headerlink" href="#explained-variance-plot" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The two functions below, i.e. <code class="docutils literal notranslate"><span class="pre">.explVar</span></code> and <code class="docutils literal notranslate"><span class="pre">.explainedVariance</span></code>
+are two options of how to generate explained variance plots. They
+generate identical plots when provided the same input paramters
+or arguments.</p>
+</div>
+<span class="target" id="module-hoggormplot.conv_explainedVariancePlot"></span><dl class="function">
+<dt id="hoggormplot.conv_explainedVariancePlot.explVar">
+<code class="descclassname">hoggormplot.conv_explainedVariancePlot.</code><code class="descname">explVar</code><span class="sig-paren">(</span><em>model</em>, <em>which=[]</em>, <em>cummulative=True</em>, <em>individual=False</em>, <em>validated=[]</em>, <em>figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_explainedVariancePlot.explVar" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function generates explained variances plots of hoggorm models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm.</em>) – </li>
+<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>cumulative</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'cumulative=TRUE'</span></code> explained variances will be plotted
+cumulatively instead of per component.</li>
+<li><strong>individual</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'individual=TRUE'</span></code> explained variances will be plotted
+per variable instead of for all variables together.</li>
+<li><strong>validated</strong> (<em>list</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'validated=[TRUE]'</span></code> validated values are plotted if
+applicable (scores =&gt; False, explainedVariance =&gt; True).</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">An explained variance plot based on the input Hoggorm model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">explVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Both&#39;</span><span class="p">],</span> <span class="n">individual</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">explVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">explVar</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="hoggormplot.conv_explainedVariancePlot.explainedVariance">
+<code class="descclassname">hoggormplot.conv_explainedVariancePlot.</code><code class="descname">explainedVariance</code><span class="sig-paren">(</span><em>model</em>, <em>which=[]</em>, <em>cummulative=True</em>, <em>individual=False</em>, <em>validated=[]</em>, <em>figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_explainedVariancePlot.explainedVariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function generates explained variances plots of hoggorm models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm.</em>) – </li>
+<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>cumulative</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'cumulative=TRUE'</span></code> explained variances will be plotted
+cumulatively instead of per component.</li>
+<li><strong>individual</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'individual=TRUE'</span></code> explained variances will be plotted
+per variable instead of for all variables together.</li>
+<li><strong>validated</strong> (<em>list</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'validated=[TRUE]'</span></code> validated values are plotted if
+applicable (scores =&gt; False, explainedVariance =&gt; True).</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">An explained variance plot based on the input Hoggorm model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">explainedVariance</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Both&#39;</span><span class="p">],</span> <span class="n">individual</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">explainedVariance</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">explainedVariance</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hoggormplot.conv_scoresPlot">
+<span id="scores-plot"></span><h2>Scores plot<a class="headerlink" href="#module-hoggormplot.conv_scoresPlot" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hoggormplot.conv_scoresPlot.scores">
+<code class="descclassname">hoggormplot.conv_scoresPlot.</code><code class="descname">scores</code><span class="sig-paren">(</span><em>model, comp=[1, 2], which=[], objNames=[], newX=[], newY=[], newObjNames=[], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_scoresPlot.scores" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a convenience function that generates scores plots of hoggorm
+models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – The statistical results of the submitted model will be visualized.</li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</li>
+<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>objNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Object names may be provided in this list.</li>
+<li><strong>newX</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains one array of new measurement data X.</li>
+<li><strong>newY</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains one array of new measurements of Y.</li>
+<li><strong>newObjNames</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains object names of new measurement data in X or Y.</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">A scores plot.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">scores</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">scores</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hoggormplot.conv_loadingsPlot">
+<span id="loadings-plot"></span><h2>Loadings plot<a class="headerlink" href="#module-hoggormplot.conv_loadingsPlot" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hoggormplot.conv_loadingsPlot.loadings">
+<code class="descclassname">hoggormplot.conv_loadingsPlot.</code><code class="descname">loadings</code><span class="sig-paren">(</span><em>model, comp=[1, 2], which=[], line=False, weights=False, XvarNames=[], YvarNames=[], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_loadingsPlot.loadings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a convenience function that generates loadings plots of hoggorm
+models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – The statistical results of the submitted model will be visualized.</li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</li>
+<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>line</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'line=TRUE'</span></code> loadings (weights) will be plotted as
+lines / spectra instead of as points in a scatter plot.</li>
+<li><strong>weights</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'weights=TRUE'</span></code> loading weights will be plotted instead
+of loadings.</li>
+<li><strong>XvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in array X may be provided in this list.</li>
+<li><strong>YvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in Y may be provided in this list.</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">A loadings plot.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">loadings</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">which</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Both&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">loadings</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">loadings</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hoggormplot.conv_correlationLoadingsPlot">
+<span id="correlation-loadings-plot"></span><h2>Correlation loadings plot<a class="headerlink" href="#module-hoggormplot.conv_correlationLoadingsPlot" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hoggormplot.conv_correlationLoadingsPlot.correlationLoadings">
+<code class="descclassname">hoggormplot.conv_correlationLoadingsPlot.</code><code class="descname">correlationLoadings</code><span class="sig-paren">(</span><em>model, comp=[1, 2], which=[], XvarNames=[], YvarNames=[], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_correlationLoadingsPlot.correlationLoadings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a convenience plot function which generates correlation loadings
+plots of hoggorm models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – The statistical results of the submitted model will be visualized.</li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</li>
+<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>XvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in array X may be provided in this list.</li>
+<li><strong>YvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in Y may be provided in this list.</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">A correlation loadings plot based on the input hoggorm model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">correlationLoadings</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">which</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Both&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">correlationLoadings</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hoggormplot.conv_biPlot">
+<span id="biplot"></span><h2>Biplot<a class="headerlink" href="#module-hoggormplot.conv_biPlot" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hoggormplot.conv_biPlot.biplot">
+<code class="descclassname">hoggormplot.conv_biPlot.</code><code class="descname">biplot</code><span class="sig-paren">(</span><em>model, comp=[1, 2], which=[], objNames=[], XvarNames=[], YvarNames=[], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_biPlot.biplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a convenience plot function which generates a bi-plot of hoggorm
+models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm.</em>) – </li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</li>
+<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>objNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Object names may be provided in this list.</li>
+<li><strong>XvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in array X may be provided in this list.</li>
+<li><strong>YvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in Y may be provided in this list.</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">A bi-plot based on the input hoggorm model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">biplot</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">which</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Both&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">biplot</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="coefficients-plot">
+<h2>Coefficients plot<a class="headerlink" href="#coefficients-plot" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The two functions below, i.e. <code class="docutils literal notranslate"><span class="pre">.coeff</span></code> and <code class="docutils literal notranslate"><span class="pre">.coefficients</span></code> are two
+options of how to generate explained variance plots. They generate
+identical plots when provided the same input paramters or arguments.</p>
+</div>
+<span class="target" id="module-hoggormplot.conv_coefficientsPlot"></span><dl class="function">
+<dt id="hoggormplot.conv_coefficientsPlot.coefficients">
+<code class="descclassname">hoggormplot.conv_coefficientsPlot.</code><code class="descname">coefficients</code><span class="sig-paren">(</span><em>model, comp=[1], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_coefficientsPlot.coefficients" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a convenience plot function which generates coefficients plots of
+hoggorm models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – </li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1].</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">A coefficients plot based on the input Hoggorm model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">coefficients</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">coefficients</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">coefficients</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="hoggormplot.conv_coefficientsPlot.coeffs">
+<code class="descclassname">hoggormplot.conv_coefficientsPlot.</code><code class="descname">coeffs</code><span class="sig-paren">(</span><em>model, comp=[1], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_coefficientsPlot.coeffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a convenience plot function which generates coefficients plots of
+hoggorm models. Note that this convenience function is identical to
+<code class="docutils literal notranslate"><span class="pre">hoggorm.resPlotting.coefficients</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – </li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1].</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">A coefficients plot based on the input Hoggorm model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">coeffs</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">coeffs</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">coeffs</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hoggormplot.conv_loadingWeightsPlot">
+<span id="loading-weights-plot"></span><h2>Loading weights plot<a class="headerlink" href="#module-hoggormplot.conv_loadingWeightsPlot" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hoggormplot.conv_loadingWeightsPlot.loadingWeights">
+<code class="descclassname">hoggormplot.conv_loadingWeightsPlot.</code><code class="descname">loadingWeights</code><span class="sig-paren">(</span><em>model, comp=[1, 2], which=[], line=False, weights=True, XvarNames=[], YvarNames=[], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_loadingWeightsPlot.loadingWeights" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a convenience function that generates loading weights plots of
+hoggorm models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – The statistical results of the submitted model will be visualized.</li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</li>
+<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>line</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'line=TRUE'</span></code> loadings (weights) will be plotted as
+lines / spectra instead of as points in a scatter plot.</li>
+<li><strong>weights</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'weights=TRUE'</span></code> loading weights will be plotted instead
+of loadings.</li>
+<li><strong>XvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in array X may be provided in this list.</li>
+<li><strong>YvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in Y may be provided in this list.</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">A loadings weights plot.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">loadingWeights</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">which</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Both&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">loadingWeights</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">loadingWeights</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hoggormplot.conv_predictPlot">
+<span id="predict-plot"></span><h2>Predict plot<a class="headerlink" href="#module-hoggormplot.conv_predictPlot" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hoggormplot.conv_predictPlot.predict">
+<code class="descclassname">hoggormplot.conv_predictPlot.</code><code class="descname">predict</code><span class="sig-paren">(</span><em>model, comp=[1, 2], objNames=[], newX=[], newY=[], newObjNames=[], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.conv_predictPlot.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a convenience function that generates plots of predicted vs.
+original values of hoggorm models.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – The statistical results of the submitted model will be visualized.</li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</li>
+<li><strong>newX</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains one array of new measurement data X.</li>
+<li><strong>newY</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains one array of new measurements of Y.</li>
+<li><strong>newObjNames</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains object names of new measurement data in X or Y.</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">A predicted vs. measured plot.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SMI.html" class="btn btn-neutral float-right" title="SMI plotting function" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mainPlot.html" class="btn btn-neutral" title="Main plotting function" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Oliver Tomic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.10.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

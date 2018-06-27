@@ -35,7 +35,8 @@ def explainedVariance(model, which=[], cummulative=True, individual=False,
        When set to ``'validated=[TRUE]'`` validated values are plotted if 
        applicable (scores => False, explainedVariance => True).
     
-    figsize: a tuple (width, height) in inches
+    figsize : tuple, optional 
+        Sets figure width and height in inches
     
     RETURNS
     -------
@@ -87,7 +88,8 @@ def explVar(model, which=[],
        When set to ``'validated=[TRUE]'`` validated values are plotted if 
        applicable (scores => False, explainedVariance => True).
     
-    figsize: a tuple (width, height) in inches
+    figsize : tuple, optional 
+        Sets figure width and height in inches
     
     RETURNS
     -------

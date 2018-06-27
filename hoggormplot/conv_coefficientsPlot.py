@@ -17,6 +17,9 @@ def coefficients(model, comp=[1], figsize=None):
     comp : list, optional
         The list contains components to be displayed. Defaults to [1].
     
+    figsize : tuple, optional 
+        Sets figure width and height in inches
+    
     RETURNS
     -------
     A coefficients plot based on the input Hoggorm model.
@@ -46,6 +49,9 @@ def coeffs(model, comp=[1], figsize=None):
     
     comp : list, optional
         The list contains components to be displayed. Defaults to [1].
+    
+    figsize : tuple, optional 
+        Sets figure width and height in inches
     
     RETURNS
     -------
