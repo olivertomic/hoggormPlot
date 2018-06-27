@@ -9,7 +9,7 @@ import hoggorm
 
 
 def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False, 
-         weights=False, cummulative=True, individual=False, validated=[],
+         weights=False, cumulative=True, individual=False, validated=[],
          objNames=[], XvarNames=[], YvarNames=[], newX=[], newY=[], 
          newObjNames=[], figsize=None):
     """
@@ -653,7 +653,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
             
             
         # 6. Explained variance
-        #    o cummulative = True, validated = False, individual = False
+        #    o cumulative = True, validated = False, individual = False
         if item == 6:
             
             if individual:
@@ -666,7 +666,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                     XorY = 'Y'
                     CalExplVar_indVar = model.Y_cumCalExplVar_indVar()
                     varNames = YvarNames
-                if cummulative == False:
+                if cumulative == False:
                     CalExplVar_indVar = np.hstack([np.reshape(CalExplVar_indVar[:,0],[-1,1]), np.diff(CalExplVar_indVar)])
 
                 if validated == False:
@@ -714,7 +714,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                         else:
                             XorY = 'Y'
                             ValExplVar_indVar = model.Y_cumValExplVar_indVar()
-                        if cummulative == False:
+                        if cumulative == False:
                             ValExplVar_indVar = np.hstack([np.reshape(ValExplVar_indVar[:,0],[-1,1]), np.diff(ValExplVar_indVar)])
                 
                         fig = plt.figure(figsize=figsize)
@@ -759,7 +759,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                     XorY = 'Y'
                     CalExplVar = model.Y_cumCalExplVar()
                     ValExplVar = model.Y_cumValExplVar()
-                if cummulative == False:
+                if cumulative == False:
                     CalExplVar = np.hstack([CalExplVar[0], np.diff(CalExplVar)])
                     ValExplVar = np.hstack([ValExplVar[0], np.diff(ValExplVar)])
                 
