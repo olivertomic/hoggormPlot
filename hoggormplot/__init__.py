@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-""" HoggormPlot is a Python package for visualsation of results from models computed with the Hoggorm package.
+""" hoggormplot is a Python package for visualsation of results from models computed with the hoggorm package.
 
 
 """
