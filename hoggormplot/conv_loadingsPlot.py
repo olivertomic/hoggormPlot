@@ -40,7 +40,8 @@ def loadings(model, comp=[1,2], which=[], line=False,
     YvarNames : list, optional
         Names of variables in Y may be provided in this list.
     
-    figsize: a tuple (width, height) in inches
+    figsize : tuple, optional 
+        Sets figure width and height in inches
     
     RETURNS
     -------

@@ -38,7 +38,8 @@ def scores(model, comp=[1,2], which=[],
     newObjNames : list, optional
         The list contains object names of new measurement data in X or Y.
     
-    figsize: a tuple (width, height) in inches
+    figsize : tuple, optional 
+        Sets figure width and height in inches
     
     RETURNS
     -------

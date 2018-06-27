@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Main plotting function &mdash; hoggormplot 0.10.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Convenience plotting functions" href="conveniencePlots.html" />
+    <link rel="prev" title="Quickstart" href="quickstart.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> hoggormplot
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.10.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Content</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Main plotting function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conveniencePlots.html">Convenience plotting functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SMI.html">SMI plotting function</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">hoggormplot</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Main plotting function</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/mainPlot.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="main-plotting-function">
+<h1>Main plotting function<a class="headerlink" href="#main-plotting-function" title="Permalink to this headline">¶</a></h1>
+<p>This is the main plotting function for visualsation of results from models
+computed with the <a class="reference external" href="http://hoggorm.readthedocs.io/en/latest/">Hoggorm</a> package. All convenience functions make use of
+the main plotting function.</p>
+<span class="target" id="module-hoggormplot.main_plot"></span><dl class="function">
+<dt id="hoggormplot.main_plot.plot">
+<code class="descclassname">hoggormplot.main_plot.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>model, comp=[1, 2], plots=[1, 2, 3, 4], which=[], line=False, weights=False, cummulative=True, individual=False, validated=[], objNames=[], XvarNames=[], YvarNames=[], newX=[], newY=[], newObjNames=[], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.main_plot.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the main plot function that generates plots that visualise results
+from PCA, PCR, PLSR and PLSR2 models computed with the Hoggorm package.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – The statistical results of the submitted model will be visualized.</li>
+<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</li>
+<li><strong>plots</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>Integers in this list define which plots are to be generated
+(combined in a single figure). The list defaults to [1, 2, 3, 4]. The
+following options are available:</p>
+<blockquote>
+<div><ul>
+<li>1 : Scores (default: X)</li>
+<li>2 : Loadings (default: X)</li>
+<li>3 : Correlation loadings (default: Both (X &amp; Y))</li>
+<li>4 : Biplot (default: X)</li>
+<li>5 : Regression coefficients</li>
+<li>6 : Explained variance (default: Y)</li>
+<li>7 : Prediction</li>
+</ul>
+</div></blockquote>
+<p>Instead of integers, string arguments may be useds. The following
+options are available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'scores'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'loadings'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'correlationLoadings'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">biplot'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'coeffs'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'explainedVariance'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'predict'</span></code></li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+available:</p>
+<blockquote>
+<div><ul>
+<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><strong>line</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'line=TRUE'</span></code> loadings (weights) will be plotted as
+lines / spectra instead of as points in a scatter plot.</li>
+<li><strong>weights</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'weights=TRUE'</span></code> loading weights will be plotted instead
+of loadings.</li>
+<li><strong>cumulative</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'cumulative=TRUE'</span></code> explained variances will be plotted
+cumulatively instead of per component.</li>
+<li><strong>individual</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'individual=TRUE'</span></code> explained variances will be plotted
+per variable instead of for all variables together.</li>
+<li><strong>validated</strong> (<em>list</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'validated=[TRUE]'</span></code> validated values are plotted if
+applicable (scores =&gt; False, explainedVariance =&gt; True).</li>
+<li><strong>objNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Object names may be provided in this list.</li>
+<li><strong>XvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in array X may be provided in this list.</li>
+<li><strong>YvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in Y may be provided in this list.</li>
+<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Multiple plots.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">EXAMPLES</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">plots</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myModel</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">plots</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;scores&#39;</span><span class="p">,</span> <span class="s1">&#39;loadings&#39;</span><span class="p">,</span> <span class="s1">&#39;explainedVariance&#39;</span><span class="p">],</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conveniencePlots.html" class="btn btn-neutral float-right" title="Convenience plotting functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Oliver Tomic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.10.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

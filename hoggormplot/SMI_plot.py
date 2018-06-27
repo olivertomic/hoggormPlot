@@ -2,6 +2,8 @@
 
 import hoggorm
 from .main_plot import plot
+import numpy as np
+import matplotlib.pyplot as plt
 
 def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
             B=10000, fontscale=1, figsize=None):
@@ -31,7 +33,8 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
     fontscale : double, optional
         scaling parameter for significance symbols and component labels.
     
-    figsize: a tuple (width, height) in inches
+    figsize : tuple, optional 
+        Sets figure width and height in inches
 
     EXAMPLES
     --------

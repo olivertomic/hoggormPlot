@@ -22,7 +22,7 @@ Installation and updates
 Installation
 ++++++++++++
 
-Install HoggormPlot easily from the command line from the `PyPI - the Python Packaging Index`_. 
+Install hoggormplot easily from the command line from the `PyPI - the Python Packaging Index`_. 
 
 .. _PyPI - the Python Packaging Index: https://pypi.python.org/pypi
 
@@ -33,7 +33,7 @@ Install HoggormPlot easily from the command line from the `PyPI - the Python Pac
 Upgrading
 +++++++++
 
-To upgrade HoggormPlot from a previously installed older version execute the following from the command line:
+To upgrade hoggormplot from a previously installed older version execute the following from the command line:
 
 .. code-block:: bash
         
@@ -49,7 +49,7 @@ Documentation
 -------------
 
 - Documentation at `Read the Docs`_
-- Jupyter notebooks with examples of how to use HoggormPlot
+- Jupyter notebooks with examples of how to use hoggormplot
 
 .. _Read the Docs: http://hoggormplot.readthedocs.io/en/latest
 .. _PCA: https://github.com/olivertomic/hoggorm/blob/master/docs/PCA%20with%20hoggorm.ipynb
