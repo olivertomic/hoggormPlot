@@ -1,3 +1,6 @@
 *.pyc
 .spyproject/
 *.egg-info
+build
+dist
+.pytest_cache

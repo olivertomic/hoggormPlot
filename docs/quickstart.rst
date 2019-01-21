@@ -76,7 +76,7 @@ Example
 
 	# Plot results with HoggormPlot
 	# Get multiple plots with the main hoggormplot function
-	>>> hopl.plot(myModel, plots=[1, 2, 3, 6], cumulative=True, line=True)
-	>>> hopl.plot(myModel)
-	>>> hopl.plot(myModel, plots=['scores', 'loadings', 'explainedVariance'], cumulative=True)
+	>>> hopl.plot(model, plots=[1, 2, 3, 6], cumulative=True, line=True)
+	>>> hopl.plot(model)
+	>>> hopl.plot(model, plots=['scores', 'loadings', 'explainedVariance'], cumulative=True)
 
