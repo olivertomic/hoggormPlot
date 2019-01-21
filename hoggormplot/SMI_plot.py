@@ -39,18 +39,17 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
     EXAMPLES
     --------
     >>> import numpy as np
-    >>> import SMI as S
-    >>> import statTools as st
-    >>> import resPlotting_with_SMI as resPlot
+    >>> import hoggorm as ho
+    >>> import hoggormplot as hopl
     
-    >>> X1 = st.centre(np.random.rand(100,300))
+    >>> X1 = ho.center(np.random.rand(100,300))
     >>> U, s, V = np.linalg.svd(X1, 0)
     >>> X2 = np.dot(np.dot(np.delete(U, 2,1), np.diag(np.delete(s,2))), np.delete(V,2,0))
     
-    >>> smiOP = S.SMI(X1,X2, ncomp1 = 10, ncomp2 = 10)
+    >>> smiOP = ho.SMI(X1,X2, ncomp1 = 10, ncomp2 = 10)
     >>> print(smiOP.smi[:4,:4])
     
-    >>> resPlot.plotSMI(smiOP)
+    >>> hopl.plotSMI(smiOP)
     """
     
     # Check how many components to use
