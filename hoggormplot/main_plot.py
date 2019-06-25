@@ -771,7 +771,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 
                 # Do the plotting and set the ticks on x-axis with corresponding name.
                 ax.plot(xPos, CalExplVar, color='b', linestyle='solid', \
-                        linewidth=1, label='Calidated explained variance')
+                        linewidth=1, label='Calibrated explained variance')
                 ax.plot(xPos, ValExplVar, color='r', linestyle='solid', \
                         linewidth=1, label='Validated explained variance')
                 ax.set_xticks(xPos)
