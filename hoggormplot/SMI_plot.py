@@ -4,6 +4,8 @@ import hoggorm
 from .main_plot import plot
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
+
 
 def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
             B=10000, fontscale=1, figsize=None):
