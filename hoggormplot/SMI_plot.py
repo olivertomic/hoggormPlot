@@ -40,22 +40,23 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
     --------
     >>> import numpy as np
     >>> import hoggorm as ho
-    >>> import hoggormplot as hopl
+    >>> import hoggormplot as hop
     
     >>> X1 = ho.center(np.random.rand(100,300))
     >>> U, s, V = np.linalg.svd(X1, 0)
-    >>> X2 = np.dot(np.dot(np.delete(U, 2,1), np.diag(np.delete(s,2))), np.delete(V,2,0))
+    >>> X2 = np.dot(np.dot(np.delete(U, 2, 1), np.diag(np.delete(s, 2))), np.delete(V, 2, 0))
     
-    >>> smiOP = ho.SMI(X1,X2, ncomp1 = 10, ncomp2 = 10)
+    >>> smiOP = ho.SMI(X1, X2, ncomp1=10, ncomp2=10)
     >>> print(smiOP.smi[:4,:4])
     
-    >>> hopl.plotSMI(smiOP)
+    >>> hop.plotSMI(smiOP)
     """
     
     # Check how many components to use
     if pc == 'max':
         pc = np.shape(smi.smi)
     maxpc = np.max(pc)
+    
     # Perform significance calculations if needed
     if significance:
         Pval = smi.significance(B=B)
@@ -63,12 +64,14 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
     # Main plot, equal axes
     fig = plt.figure(figsize=figsize)
     ax  = fig.add_subplot(111, adjustable='box', aspect=1)
+    
     # Loop over all combinations of components
     for i in range(pc[0]):
         for j in range(pc[1]):
-            p = pat.Rectangle([(j-i)/2,(i+j)/2],np.sqrt(1/2),np.sqrt(1/2), fill=True, angle=45, \
+            p = pat.Rectangle([(j-i)/2, (i+j)/2], np.sqrt(1/2), np.sqrt(1/2), fill=True, angle=45, \
                               edgecolor = [0,0,0], \
                               facecolor = [smi.smi[i,j], smi.smi[i,j], smi.smi[i,j]])
+            
             ax.add_patch(p)
             # Add significance symbols
             if significance:
@@ -101,15 +104,18 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
                         ax.text((j-i)/2, (i+j)/2+0.5, r'$\subset$',\
                             fontsize = 10*7/maxpc*fontscale, horizontalalignment='center',\
                             verticalalignment='center')
+    
     # Add component labels                    
     for i in range(pc[0]):
         ax.text(-i/2-0.25-maxpc*0.015, i/2-maxpc*0.015, i+1,\
                 fontsize = 10*7/maxpc*fontscale, horizontalalignment='right',\
                             verticalalignment='center')
+    
     for j in range(pc[1]):
         ax.text(j/2+0.25+maxpc*0.015, j/2-maxpc*0.015, j+1,\
                 fontsize = 10*7/maxpc*fontscale, horizontalalignment='left',\
                             verticalalignment='center')
+    
     # Set axis limitations
     ax.set_xlim(-max(pc)/2,max(pc)/2)
     ax.set_ylim(0,max(pc))

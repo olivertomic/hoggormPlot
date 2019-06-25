@@ -23,7 +23,7 @@ Tag the new release
 > git tag -a vX.Y.Z -m "Tag release X.Y.Z"
 > git push origin --tags
 """
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup()
