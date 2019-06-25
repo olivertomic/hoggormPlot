@@ -68,7 +68,7 @@ def plotSMI(smi, pc='max', significance=True, X1name='X1', X2name='X2',\
     # Loop over all combinations of components
     for i in range(pc[0]):
         for j in range(pc[1]):
-            p = pat.Rectangle([(j-i)/2, (i+j)/2], np.sqrt(1/2), np.sqrt(1/2), fill=True, angle=45, \
+            p = plt.Rectangle([(j-i)/2, (i+j)/2], np.sqrt(1/2), np.sqrt(1/2), fill=True, angle=45, \
                               edgecolor = [0,0,0], \
                               facecolor = [smi.smi[i,j], smi.smi[i,j], smi.smi[i,j]])
             
