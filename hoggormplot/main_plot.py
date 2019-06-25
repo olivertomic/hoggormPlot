@@ -205,7 +205,7 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
     pcNames = []
     
     for num in range(numPC+1):
-        label = 'PC{0}'.format(num)
+        label = 'comp {0}'.format(num)
         pcNames.append(label)
 
 
@@ -314,13 +314,13 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
                 
                 # Plot title, axis names. 
                 if modeltype != 'PCA':
-                    ax.set_xlabel('PC{0} ({1}%, {2}%)'.format(str(comp[0]),str(round(XexplVar[comp[0]-1],1)), \
+                    ax.set_xlabel('comp {0} ({1}%, {2}%)'.format(str(comp[0]),str(round(XexplVar[comp[0]-1],1)), \
                             str(round(YexplVar[comp[0]-1],1))))
-                    ax.set_ylabel('PC{0} ({1}%, {2}%)'.format(str(comp[1]),str(round(XexplVar[comp[1]-1],1)), \
+                    ax.set_ylabel('comp {0} ({1}%, {2}%)'.format(str(comp[1]),str(round(XexplVar[comp[1]-1],1)), \
                             str(round(YexplVar[comp[1]-1],1))))
                 else:
-                    ax.set_xlabel('PC{0} ({1}%)'.format(str(comp[0]),str(round(XexplVar[comp[0]-1],1))))
-                    ax.set_ylabel('PC{0} ({1}%)'.format(str(comp[1]),str(round(XexplVar[comp[1]-1],1))))
+                    ax.set_xlabel('comp {0} ({1}%)'.format(str(comp[0]),str(round(XexplVar[comp[0]-1],1))))
+                    ax.set_ylabel('comp {0} ({1}%)'.format(str(comp[1]),str(round(XexplVar[comp[1]-1],1))))
 
                 
                 if XorY[xy] == 'X':
@@ -435,9 +435,9 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
 
                 else: # Line plot
                     ax.plot(Loadings[:, comp[0]], color='b', 
-                            linewidth=1, label='PC{0}'.format(str(comp[0])))
+                            linewidth=1, label='comp {0}'.format(str(comp[0])))
                     ax.plot(Loadings[:, comp[1]], color='r', 
-                            linewidth=1, label='PC{0}'.format(str(comp[1])))
+                            linewidth=1, label='comp {0}'.format(str(comp[1])))
                             
                     xMaxLine = np.shape(Loadings)[0] * 1.05
                     ax.plot([0, xMaxLine], [0, 0], color='0.4', linestyle='dashed', \
@@ -528,32 +528,32 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
             
             # Plot title, axis names. 
             if modeltype != 'PCA':
-                ax.set_xlabel('PC{0} ({1}%, {2}%)'.format(str(comp[0]), str(round(XexplVar[comp[0]-1],1)), \
+                ax.set_xlabel('comp {0} ({1}%, {2}%)'.format(str(comp[0]), str(round(XexplVar[comp[0]-1],1)), \
                         str(round(YexplVar[comp[0]-1], 1))))
-                ax.set_ylabel('PC{0} ({1}%, {2}%)'.format(str(comp[1]), str(round(XexplVar[comp[1]-1],1)), \
+                ax.set_ylabel('comp {0} ({1}%, {2}%)'.format(str(comp[1]), str(round(XexplVar[comp[1]-1],1)), \
                         str(round(YexplVar[comp[1]-1], 1))))    
             else:
-                ax.set_xlabel('PC{0} ({1}%)'.format(str(comp[0]), str(round(XexplVar[comp[0]-1],1))))
-                ax.set_ylabel('PC{0} ({1}%)'.format(str(comp[1]), str(round(XexplVar[comp[1]-1],1))))
+                ax.set_xlabel('comp {0} ({1}%)'.format(str(comp[0]), str(round(XexplVar[comp[0]-1],1))))
+                ax.set_ylabel('comp {0} ({1}%)'.format(str(comp[1]), str(round(XexplVar[comp[1]-1],1))))
             
             # Other plot settings
             if which[plotInd] == 'X':
                 ax.set_title('X correlation loadings plot')
-                ax.set_xlabel('PC{0} ({1}%)'.format(str(comp[0]), \
+                ax.set_xlabel('comp {0} ({1}%)'.format(str(comp[0]), \
                         str(round(XexplVar[comp[0]-1], 1))))
-                ax.set_ylabel('PC{0} ({1}%)'.format(str(comp[1]), \
+                ax.set_ylabel('comp {0} ({1}%)'.format(str(comp[1]), \
                         str(round(XexplVar[comp[1]-1], 1))))    
             elif which[plotInd] == 'Y':
                 ax.set_title('Y correlation loadings plot')
-                ax.set_xlabel('PC{0} ({1}%)'.format(str(comp[0]), \
+                ax.set_xlabel('comp {0} ({1}%)'.format(str(comp[0]), \
                         str(round(YexplVar[comp[0]-1], 1))))
-                ax.set_ylabel('PC{0} ({1}%)'.format(str(comp[1]), \
+                ax.set_ylabel('comp {0} ({1}%)'.format(str(comp[1]), \
                         str(round(YexplVar[comp[1]-1], 1))))    
             else:
                 ax.set_title('X & Y correlation loadings plot')
-                ax.set_xlabel('PC{0} ({1}%, {2}%)'.format(str(comp[0]), str(round(XexplVar[comp[0]-1],1)), \
+                ax.set_xlabel('comp {0} ({1}%, {2}%)'.format(str(comp[0]), str(round(XexplVar[comp[0]-1],1)), \
                         str(round(YexplVar[comp[0]-1], 1))))
-                ax.set_ylabel('PC{0} ({1}%, {2}%)'.format(str(comp[1]), str(round(XexplVar[comp[1]-1],1)), \
+                ax.set_ylabel('comp {0} ({1}%, {2}%)'.format(str(comp[1]), str(round(XexplVar[comp[1]-1],1)), \
                         str(round(YexplVar[comp[1]-1], 1))))    
             
             ax.set_xlim(-1.1, 1.1)
@@ -599,16 +599,16 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
             ax.set_xlim(rangX1[0]-rangDiff*0.05, rangX1[1]+rangDiff*0.15)
             ax.set_ylim(rangX1[0]-rangDiff*0.05, rangX1[1]+rangDiff*0.05)
             
-            plt.xlabel('Scores PC{0} ({1}%)'.format(str(comp[0]),\
+            plt.xlabel('Scores comp {0} ({1}%)'.format(str(comp[0]),\
                        str(round(explVar[comp[0]-1],1))))
-            plt.ylabel('Scores PC{0} ({1}%)'.format(str(comp[1]),\
+            plt.ylabel('Scores comp {0} ({1}%)'.format(str(comp[1]),\
                        str(round(explVar[comp[1]-1],1))))
             ax1 = plt.twiny()
-            plt.xlabel('Loadings PC{0} ({1}%)'.format(str(comp[0]),\
+            plt.xlabel('Loadings comp {0} ({1}%)'.format(str(comp[0]),\
                        str(round(explVar[comp[0]-1],1))), color='red')
             plt.tick_params(axis="x", labelcolor="r")
             ax2 = plt.twinx()
-            plt.ylabel('Loadings PC{0} ({1}%)'.format(str(comp[1]),\
+            plt.ylabel('Loadings comp {0} ({1}%)'.format(str(comp[1]),\
                        str(round(explVar[comp[1]-1],1))), color='red')
             plt.tick_params(axis="y", labelcolor="r")
             ax2.set_xlim((rangX1[0]-rangDiff*0.05)*ratio,(rangX1[1]+rangDiff*0.15)*ratio)
