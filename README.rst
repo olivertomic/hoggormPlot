@@ -1,6 +1,4 @@
 .. image:: https://readthedocs.org/projects/hoggormplot/badge/?version=latest
-:target: https://hoggormplot.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
 
 hoggormplot
 ===========
