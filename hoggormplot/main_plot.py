@@ -105,6 +105,19 @@ def plot(model, comp=[1,2], plots=[1,2,3,4], which=[], line=False,
     # Initialization and checks #
     #############################
 
+    # Create local copies of mutable input objects
+    comp  = comp.copy()
+    plots = plots.copy()
+    which = which.copy()
+    newX  = newX.copy()
+    newY  = newY.copy()
+    objNames    = objNames.copy()
+    XvarNames   = XvarNames.copy()
+    YvarNames   = YvarNames.copy()
+    newObjNames = newObjNames.copy()
+    validated   = validated.copy()
+
+
     # Check input class
     if isinstance(model, hoggorm.pca.nipalsPCA):
         modeltype = 'PCA'
