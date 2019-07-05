@@ -4,7 +4,7 @@ import hoggorm
 from .main_plot import plot
 
 
-def explainedVariance(model, which=[], cummulative=True, individual=False, 
+def explainedVariance(model, which=[], cumulative=True, individual=False, 
                       validated=[], figsize=None):
     """
     This function generates explained variances plots of hoggorm models.
@@ -53,12 +53,12 @@ def explainedVariance(model, which=[], cummulative=True, individual=False,
     >>> hopl.explainedVariance(myModel, cumulative=True)
     """
     plot(model, plots='explainedVariance', which=which,
-                 cummulative=cummulative, individual=individual, validated=validated,
+                 cumulative=cumulative, individual=individual, validated=validated,
                  figsize=figsize)
 
 
 def explVar(model, which=[],
-                 cummulative=True, individual=False, validated=[], figsize=None):
+                 cumulative=True, individual=False, validated=[], figsize=None):
     """
     This function generates explained variances plots of hoggorm models.
     
@@ -106,7 +106,7 @@ def explVar(model, which=[],
     >>> hopl.explVar(myModel, cumulative=True)
     """
     plot(model, plots='explainedVariance', which=which,
-                 cummulative=cummulative, individual=individual, validated=validated,
+                 cumulative=cumulative, individual=individual, validated=validated,
                  figsize=figsize)
 
 
