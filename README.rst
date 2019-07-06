@@ -19,8 +19,8 @@ Installation
 Requirements
 ------------
 
-- hoggorm
-- matplotlib
+- hoggorm >= 0.13.2
+- matplotlib >= 3.0.2
 
 
 Documentation
