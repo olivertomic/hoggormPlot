@@ -34,7 +34,7 @@ def coefficients(model, comp=[1], figsize=None):
     >>> hopl.coefficients(myModel)
     >>> hopl.coefficients(myModel, comp=[2])
     """
-    plot(model=model, plots='coeffs', comp=comp, figsize=figsize)
+    plot(model=model, plots=[5], comp=comp, figsize=figsize)
 
 
 def coeffs(model, comp=[1], figsize=None):
@@ -67,6 +67,6 @@ def coeffs(model, comp=[1], figsize=None):
     >>> hopl.coeffs(myModel)
     >>> hopl.coeffs(myModel, comp=[2])
     """
-    plot(model=model, plots='coeffs', comp=comp, figsize=figsize)
+    plot(model=model, plots=[5], comp=comp, figsize=figsize)
 
 

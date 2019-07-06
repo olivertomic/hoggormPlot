@@ -44,7 +44,7 @@ def predict(model, comp=[1,2],
     >>> hopl.predict(myModel)
     >>> hopl.predict(myModel, comp=[3, 4])
     """
-    plot(model, comp=comp, plots='predict', 
+    plot(model, comp=comp, plots=[7], 
                  objNames=objNames, newX=newX, newY=newY, newObjNames=newObjNames,
                  figsize=figsize)
 

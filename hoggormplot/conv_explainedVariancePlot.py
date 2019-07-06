@@ -52,7 +52,7 @@ def explainedVariance(model, which=[], cumulative=True, individual=False,
     >>> hopl.explainedVariance(myModel)
     >>> hopl.explainedVariance(myModel, cumulative=True)
     """
-    plot(model, plots='explainedVariance', which=which,
+    plot(model, plots=[6], which=which,
                  cumulative=cumulative, individual=individual, validated=validated,
                  figsize=figsize)
 
@@ -105,7 +105,7 @@ def explVar(model, which=[],
     >>> hopl.explVar(myModel)
     >>> hopl.explVar(myModel, cumulative=True)
     """
-    plot(model, plots='explainedVariance', which=which,
+    plot(model, plots=[6], which=which,
                  cumulative=cumulative, individual=individual, validated=validated,
                  figsize=figsize)
 

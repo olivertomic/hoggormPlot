@@ -54,7 +54,7 @@ def scores(model, comp=[1,2], which=[],
     >>> hopl.scores(myModel, comp=[1, 3])
     >>> hopl.scores(myModel)
     """
-    plot(model=model, comp=comp, plots='scores', which=which,
+    plot(model=model, comp=comp, plots=[1], which=which,
                  objNames=objNames, newX=newX, newY=newY, newObjNames=newObjNames,
                  figsize=figsize)
  

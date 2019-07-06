@@ -57,7 +57,7 @@ def loadingWeights(model, comp=[1,2], which=[], line=False,
     >>> hopl.loadingWeights(myModel)
     >>> hopl.loadingWeights(myModel, line=True, weights=True)
     """
-    plot(model=model, comp=comp, plots='loadings', which=which, line=line, 
+    plot(model=model, comp=comp, plots=[2], which=which, line=line, 
                  weights=weights, XvarNames=XvarNames, YvarNames=YvarNames,
                  figsize=figsize)
 

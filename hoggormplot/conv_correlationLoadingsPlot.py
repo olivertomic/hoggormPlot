@@ -48,7 +48,7 @@ def correlationLoadings(model, comp=[1,2], which=[],
     >>> hopl.correlationLoadings(myModel, comp=[2,4], which=['Both'])
     >>> hopl.correlationLoadings(myModel)
     """
-    plot(model=model, comp=comp, plots='correlationLoadings', which=which,
+    plot(model=model, comp=comp, plots=[3], which=which,
                  XvarNames=XvarNames, YvarNames=YvarNames, figsize=figsize)
 
 

@@ -51,7 +51,7 @@ def biplot(model, comp=[1,2], which=[],
     >>> hopl.biplot(myModel, comp=[2,4], which=['Both'])
     >>> hopl.biplot(myModel)
     """
-    plot(model=model, comp=comp, plots='biplot', which=which,
+    plot(model=model, comp=comp, plots=[4], which=which,
                  objNames=objNames, XvarNames=XvarNames, YvarNames=YvarNames,
                  figsize=figsize)
 
