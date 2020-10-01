@@ -12,7 +12,7 @@ Explained variance plot
 
 .. note:: The two functions below, i.e. ``.explVar`` and ``.explainedVariance``
           are two options of how to generate explained variance plots. They 
-          generate identical plots when provided the same input paramters
+          generate identical plots when provided the same input parameters
           or arguments.
 
 .. automodule:: hoggormplot.conv_explainedVariancePlot
@@ -52,7 +52,7 @@ Coefficients plot
 
 .. note:: The two functions below, i.e. ``.coeff`` and ``.coefficients`` are two
           options of how to generate explained variance plots. They generate
-          identical plots when provided the same input paramters or arguments.
+          identical plots when provided the same input parameters or arguments.
 
 .. automodule:: hoggormplot.conv_coefficientsPlot
    :members:
