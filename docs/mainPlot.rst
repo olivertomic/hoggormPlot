@@ -1,7 +1,7 @@
 Main plotting function
 ======================
 
-This is the main plotting function for visualsation of results from models
+This is the main plotting function for visualisation of results from models
 computed with the `hoggorm`_ package. All convenience functions make use of 
 the main plotting function.
 
