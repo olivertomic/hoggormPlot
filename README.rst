@@ -38,7 +38,7 @@ Using conda
 
 .. code-block:: bash
 
-	conda install -c condaforge hoggormplot
+	conda install -c conda-forge hoggormplot
 
 
 Requirements
