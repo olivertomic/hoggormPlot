@@ -1,0 +1,5 @@
+numpy >= 1.11.3
+matplotlib >= 3.0.2
+hoggorm >= 0.13.2
+sphinx
+sphinx-rtd-theme
