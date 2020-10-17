@@ -2,7 +2,7 @@ Convenience plotting functions
 ==============================
 
 This is an overview of available **convenience plotting functions** in 
-HoggormPlot. They are based on the main plot function 
+hoggormplot. They are based on the main plot function 
 ``hoggorm.main_plot.plot`` and provide simplified interfaces for interactive
 use.
 

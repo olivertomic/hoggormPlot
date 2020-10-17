@@ -11,7 +11,7 @@ Welcome to the hoggormplot documentation
 hoggormplot is a complementary plotting package designed specifically for visualising results of
 multivariate statistical models computed with the `hoggorm`_ package.
 
-.. _hoggorm: http://hoggorm.readthedocs.io/en/latest/
+.. _hoggorm: https://hoggorm.readthedocs.io/en/latest/
 
 .. toctree::
    :maxdepth: 2
