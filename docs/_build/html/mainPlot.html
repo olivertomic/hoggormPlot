@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Main plotting function &mdash; hoggormplot 0.10.0 documentation</title>
+  <title>Main plotting function &mdash; hoggormplot 0.13.2 documentation</title>
   
 
   
@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Convenience plotting functions" href="conveniencePlots.html" />
     <link rel="prev" title="Quickstart" href="quickstart.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -58,7 +60,7 @@
             
             
               <div class="version">
-                0.10.0
+                0.13.2
               </div>
             
           
@@ -154,86 +156,82 @@
             
   <div class="section" id="main-plotting-function">
 <h1>Main plotting function<a class="headerlink" href="#main-plotting-function" title="Permalink to this headline">¶</a></h1>
-<p>This is the main plotting function for visualsation of results from models
-computed with the <a class="reference external" href="http://hoggorm.readthedocs.io/en/latest/">Hoggorm</a> package. All convenience functions make use of
+<p>This is the main plotting function for visualisation of results from models
+computed with the <a class="reference external" href="http://hoggorm.readthedocs.io/en/latest/">hoggorm</a> package. All convenience functions make use of
 the main plotting function.</p>
-<span class="target" id="module-hoggormplot.main_plot"></span><dl class="function">
+<span class="target" id="module-hoggormplot.main_plot"></span><dl class="py function">
 <dt id="hoggormplot.main_plot.plot">
-<code class="descclassname">hoggormplot.main_plot.</code><code class="descname">plot</code><span class="sig-paren">(</span><em>model, comp=[1, 2], plots=[1, 2, 3, 4], which=[], line=False, weights=False, cummulative=True, individual=False, validated=[], objNames=[], XvarNames=[], YvarNames=[], newX=[], newY=[], newObjNames=[], figsize=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.main_plot.plot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">hoggormplot.main_plot.</code><code class="sig-name descname">plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">[1, 2]</span></em>, <em class="sig-param"><span class="n">plots</span><span class="o">=</span><span class="default_value">[1, 2, 3, 4]</span></em>, <em class="sig-param"><span class="n">which</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">line</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">weights</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">cumulative</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">individual</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">validated</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">objNames</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">XvarNames</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">YvarNames</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">newX</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">newY</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">newObjNames</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#hoggormplot.main_plot.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the main plot function that generates plots that visualise results
 from PCA, PCR, PLSR and PLSR2 models computed with the Hoggorm package.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – The statistical results of the submitted model will be visualized.</li>
-<li><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</li>
-<li><strong>plots</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>Integers in this list define which plots are to be generated
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>nipalsPCR/nipalsPLSR1/nipalsPLSR2 class object computed in Hoggorm</em>) – The statistical results of the submitted model will be visualized.</p></li>
+<li><p><strong>comp</strong> (<em>list</em><em>, </em><em>optional</em>) – The list contains components to be displayed. Defaults to [1,2].</p></li>
+<li><p><strong>plots</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>Integers in this list define which plots are to be generated
 (combined in a single figure). The list defaults to [1, 2, 3, 4]. The
 following options are available:</p>
 <blockquote>
 <div><ul>
-<li>1 : Scores (default: X)</li>
-<li>2 : Loadings (default: X)</li>
-<li>3 : Correlation loadings (default: Both (X &amp; Y))</li>
-<li>4 : Biplot (default: X)</li>
-<li>5 : Regression coefficients</li>
-<li>6 : Explained variance (default: Y)</li>
-<li>7 : Prediction</li>
+<li><p>1 : Scores (default: X)</p></li>
+<li><p>2 : Loadings (default: X)</p></li>
+<li><p>3 : Correlation loadings (default: Both (X &amp; Y))</p></li>
+<li><p>4 : Biplot (default: X)</p></li>
+<li><p>5 : Regression coefficients</p></li>
+<li><p>6 : Explained variance (default: Y)</p></li>
+<li><p>7 : Prediction</p></li>
 </ul>
 </div></blockquote>
 <p>Instead of integers, string arguments may be useds. The following
 options are available:</p>
 <blockquote>
 <div><ul>
-<li><code class="docutils literal notranslate"><span class="pre">'scores'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'loadings'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'correlationLoadings'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">biplot'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'coeffs'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'explainedVariance'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'predict'</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'scores'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'loadings'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'correlationLoadings'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">biplot'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'coeffs'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'explainedVariance'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'predict'</span></code></p></li>
 </ul>
 </div></blockquote>
-</li>
-<li><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
+</p></li>
+<li><p><strong>which</strong> (<em>list</em><em>, </em><em>optional</em>) – <p>This list may contain one string argument. The following options are
 available:</p>
 <blockquote>
 <div><ul>
-<li><code class="docutils literal notranslate"><span class="pre">'X'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'X'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'Y'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'Both'</span></code> (defaults listed with ‘plots’ parameter)</p></li>
 </ul>
 </div></blockquote>
-</li>
-<li><strong>line</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'line=TRUE'</span></code> loadings (weights) will be plotted as
-lines / spectra instead of as points in a scatter plot.</li>
-<li><strong>weights</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'weights=TRUE'</span></code> loading weights will be plotted instead
-of loadings.</li>
-<li><strong>cumulative</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'cumulative=TRUE'</span></code> explained variances will be plotted
-cumulatively instead of per component.</li>
-<li><strong>individual</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'individual=TRUE'</span></code> explained variances will be plotted
-per variable instead of for all variables together.</li>
-<li><strong>validated</strong> (<em>list</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'validated=[TRUE]'</span></code> validated values are plotted if
-applicable (scores =&gt; False, explainedVariance =&gt; True).</li>
-<li><strong>objNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Object names may be provided in this list.</li>
-<li><strong>XvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in array X may be provided in this list.</li>
-<li><strong>YvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in Y may be provided in this list.</li>
-<li><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</li>
+</p></li>
+<li><p><strong>line</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'line=TRUE'</span></code> loadings (weights) will be plotted as
+lines / spectra instead of as points in a scatter plot.</p></li>
+<li><p><strong>weights</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'weights=TRUE'</span></code> loading weights will be plotted instead
+of loadings.</p></li>
+<li><p><strong>cumulative</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'cumulative=TRUE'</span></code> explained variances will be plotted
+cumulatively instead of per component.</p></li>
+<li><p><strong>individual</strong> (<em>boolean</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'individual=TRUE'</span></code> explained variances will be plotted
+per variable instead of for all variables together.</p></li>
+<li><p><strong>validated</strong> (<em>list</em><em>, </em><em>optional</em>) – When set to <code class="docutils literal notranslate"><span class="pre">'validated=[TRUE]'</span></code> validated values are plotted if
+applicable (scores =&gt; False, explainedVariance =&gt; True).</p></li>
+<li><p><strong>objNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Object names may be provided in this list.</p></li>
+<li><p><strong>XvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in array X may be provided in this list.</p></li>
+<li><p><strong>YvarNames</strong> (<em>list</em><em>, </em><em>optional</em>) – Names of variables in Y may be provided in this list.</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Sets figure width and height in inches</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Multiple plots.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">EXAMPLES</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Multiple plots.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggorm</span> <span class="k">as</span> <span class="nn">ho</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hoggormplot</span> <span class="k">as</span> <span class="nn">hopl</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myModel</span> <span class="o">=</span> <span class="n">ho</span><span class="o">.</span><span class="n">nipalsPLS2</span><span class="p">(</span><span class="n">arrX</span><span class="o">=</span><span class="n">my_X_data</span><span class="p">,</span> <span class="n">arrY</span><span class="o">=</span><span class="n">my_Y_data</span><span class="p">,</span> <span class="n">cvType</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;loo&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hopl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myModel</span><span class="p">,</span> <span class="n">plots</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -256,7 +254,7 @@ applicable (scores =&gt; False, explainedVariance =&gt; True).</li>
         <a href="conveniencePlots.html" class="btn btn-neutral float-right" title="Convenience plotting functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="quickstart.html" class="btn btn-neutral" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -265,7 +263,7 @@ applicable (scores =&gt; False, explainedVariance =&gt; True).</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Oliver Tomic.
+        &copy; Copyright 2019-2020, Oliver Tomic
 
     </p>
   </div>
@@ -282,33 +280,16 @@ applicable (scores =&gt; False, explainedVariance =&gt; True).</li>
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.10.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

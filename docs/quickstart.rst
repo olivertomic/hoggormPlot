@@ -7,7 +7,7 @@ Make sure that Python 3.5 or higher is installed. A convenient way to install
 Python and many useful packages for scientific computing is to use the 
 `Anaconda distribution`_.
 
-.. _Anaconda distribution: https://www.anaconda.com/download/
+.. _Anaconda distribution: https://www.anaconda.com/products/individual
 
 Required Python packages
 
@@ -24,7 +24,7 @@ Installation
 
 Install hoggormplot easily from the command line from the `PyPI - the Python Packaging Index`_. 
 
-.. _PyPI - the Python Packaging Index: https://pypi.python.org/pypi
+.. _PyPI - the Python Packaging Index: https://pypi.org/
 
 .. code-block:: bash
 
@@ -51,7 +51,7 @@ Documentation
 - Documentation at `Read the Docs`_
 - Jupyter notebooks with examples of how to use hoggormplot
 
-.. _Read the Docs: http://hoggormplot.readthedocs.io/en/latest
+.. _Read the Docs: https://hoggormplot.readthedocs.io/en/latest
 .. _PCA: https://github.com/olivertomic/hoggorm/blob/master/docs/PCA%20with%20hoggorm.ipynb
 
 

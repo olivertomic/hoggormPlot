@@ -1,19 +1,44 @@
 .. image:: https://readthedocs.org/projects/hoggormplot/badge/?version=latest
 
+
+.. image:: https://pepy.tech/badge/hoggormplot
+    :target: https://pepy.tech/project/hoggormplot
+    :alt: PyPI Downloads
+
+.. image:: https://pepy.tech/badge/hoggormplot/month
+    :target: https://pepy.tech/project/hoggormplot/month
+    :alt: PyPI Downloads
+
+.. image:: https://pepy.tech/badge/hoggormplot/week
+    :target: https://pepy.tech/project/hoggormplot/week
+    :alt: PyPI Downloads
+
+
 hoggormplot
 ===========
 
 hoggormplot is a python package that contains plotting functions for visualisation of data analysis results from the `hoggorm`_ package. 
 
-.. _hoggorm: http://hoggorm.readthedocs.io/en/latest
+.. _hoggorm: https://hoggorm.readthedocs.io/en/latest
 
 
 Installation
 ------------
 
+Using pip
+***********
+
 .. code-block:: bash
 
 	pip install hoggormplot
+
+
+Using conda
+***********
+
+.. code-block:: bash
+
+	conda install -c conda-forge hoggormplot
 
 
 Requirements
@@ -28,4 +53,4 @@ Documentation
 
 - Documentation at `Read the Docs`_
 
-.. _Read the Docs: http://hoggormplot.readthedocs.io/en/latest
+.. _Read the Docs: https://hoggormplot.readthedocs.io/en/latest

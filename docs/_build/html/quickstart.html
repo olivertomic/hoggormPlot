@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quickstart &mdash; hoggormplot 0.10.0 documentation</title>
+  <title>Quickstart &mdash; hoggormplot 0.13.2 documentation</title>
   
 
   
@@ -17,34 +17,36 @@
   
 
   
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-  
     
 
   
-
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Main plotting function" href="mainPlot.html" />
-    <link rel="prev" title="Welcome to the HoggormPlot documentation" href="index.html" /> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    <link rel="prev" title="Welcome to the hoggormplot documentation" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -58,7 +60,7 @@
             
             
               <div class="version">
-                0.10.0
+                0.13.2
               </div>
             
           
@@ -171,23 +173,23 @@ Python and many useful packages for scientific computing is to use the
 <a class="reference external" href="https://www.anaconda.com/download/">Anaconda distribution</a>.</p>
 <p>Required Python packages</p>
 <ul class="simple">
-<li>numpy</li>
-<li>hoggorm &gt;= 0.11.0</li>
-<li>matplotlib &gt;= 2.1.1</li>
+<li><p>numpy</p></li>
+<li><p>hoggorm &gt;= 0.11.0</p></li>
+<li><p>matplotlib &gt;= 2.1.1</p></li>
 </ul>
 </div>
 <div class="section" id="installation-and-updates">
 <h2>Installation and updates<a class="headerlink" href="#installation-and-updates" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
-<p>Install HoggormPlot easily from the command line from the <a class="reference external" href="https://pypi.python.org/pypi">PyPI - the Python Packaging Index</a>.</p>
+<p>Install hoggormplot easily from the command line from the <a class="reference external" href="https://pypi.python.org/pypi">PyPI - the Python Packaging Index</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install hoggormplot
 </pre></div>
 </div>
 </div>
 <div class="section" id="upgrading">
 <h3>Upgrading<a class="headerlink" href="#upgrading" title="Permalink to this headline">¶</a></h3>
-<p>To upgrade HoggormPlot from a previously installed older version execute the following from the command line:</p>
+<p>To upgrade hoggormplot from a previously installed older version execute the following from the command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --upgrade hoggormplot
 </pre></div>
 </div>
@@ -197,8 +199,8 @@ Python and many useful packages for scientific computing is to use the
 <div class="section" id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Documentation at <a class="reference external" href="http://hoggormplot.readthedocs.io/en/latest">Read the Docs</a></li>
-<li>Jupyter notebooks with examples of how to use HoggormPlot</li>
+<li><p>Documentation at <a class="reference external" href="http://hoggormplot.readthedocs.io/en/latest">Read the Docs</a></p></li>
+<li><p>Jupyter notebooks with examples of how to use hoggormplot</p></li>
 </ul>
 </div>
 <div class="section" id="example">
@@ -219,9 +221,9 @@ Python and many useful packages for scientific computing is to use the
 
 <span class="c1"># Plot results with HoggormPlot</span>
 <span class="c1"># Get multiple plots with the main hoggormplot function</span>
-&gt;&gt;&gt; hopl.plot<span class="o">(</span>myModel, <span class="nv">plots</span><span class="o">=[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">6</span><span class="o">]</span>, <span class="nv">cumulative</span><span class="o">=</span>True, <span class="nv">line</span><span class="o">=</span>True<span class="o">)</span>
-&gt;&gt;&gt; hopl.plot<span class="o">(</span>myModel<span class="o">)</span>
-&gt;&gt;&gt; hopl.plot<span class="o">(</span>myModel, <span class="nv">plots</span><span class="o">=[</span><span class="s1">&#39;scores&#39;</span>, <span class="s1">&#39;loadings&#39;</span>, <span class="s1">&#39;explainedVariance&#39;</span><span class="o">]</span>, <span class="nv">cumulative</span><span class="o">=</span>True<span class="o">)</span>
+&gt;&gt;&gt; hopl.plot<span class="o">(</span>model, <span class="nv">plots</span><span class="o">=[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">6</span><span class="o">]</span>, <span class="nv">cumulative</span><span class="o">=</span>True, <span class="nv">line</span><span class="o">=</span>True<span class="o">)</span>
+&gt;&gt;&gt; hopl.plot<span class="o">(</span>model<span class="o">)</span>
+&gt;&gt;&gt; hopl.plot<span class="o">(</span>model, <span class="nv">plots</span><span class="o">=[</span><span class="s1">&#39;scores&#39;</span>, <span class="s1">&#39;loadings&#39;</span>, <span class="s1">&#39;explainedVariance&#39;</span><span class="o">]</span>, <span class="nv">cumulative</span><span class="o">=</span>True<span class="o">)</span>
 </pre></div>
 </div>
 </div>
@@ -238,7 +240,7 @@ Python and many useful packages for scientific computing is to use the
         <a href="mainPlot.html" class="btn btn-neutral float-right" title="Main plotting function" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to the HoggormPlot documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the hoggormplot documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -247,7 +249,7 @@ Python and many useful packages for scientific computing is to use the
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2017, Oliver Tomic.
+        &copy; Copyright 2019-2020, Oliver Tomic
 
     </p>
   </div>
@@ -264,33 +266,16 @@ Python and many useful packages for scientific computing is to use the
   
 
 
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.10.0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  <script type="text/javascript" src="_static/js/theme.js"></script>
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
