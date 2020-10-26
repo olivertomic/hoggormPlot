@@ -630,7 +630,7 @@ def plot(model, comp=[1, 2], plots=[1, 2, 3, 4], which=[], line=False,
                 ax.plot([0, xMaxLine], [0, 0], color='0.4', linestyle='dashed',
                         linewidth=1)
 
-                ax.set_title('Regression cofficients')
+                ax.set_title('Regression coefficients')
                 ax.set_xlim(0, xMaxLine)
 
                 if np.shape(RegCoefs)[1] > 1:
